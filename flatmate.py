@@ -1,11 +1,12 @@
 class Student(object):
-
+    
     n_bed = 3
     n_bath = 2
-    intrest_list = ["ML", "CS", "DS", "NLP", "Autonomus Car", "Vision"]
+    intrest_list = ["ML", "CS", "NLP", "Autonomus Car", "Vision"]
     area = "Morningside heights"
 
-    def __init__(self, smoke, major, degree, allow_guest,
+    
+    def __init__(self, smoke, major, degree, allow_guest, 
                  budget_min, budget_max, interest, loud_music):
 
         self.smoke = smoke
@@ -16,24 +17,21 @@ class Student(object):
         self.budget_max = budget_max
         self.interest = interest
         self.loud_music = loud_music
-
+        
     def compatible(self, other):
-
+        
         if self.allow_guest != other.allow_guest:
             return False
-
-        if self.interest not in self.intrest_list:
+        
+        if (self.interest or other.interest) not in self.intrest_list:
             return False
-
-        if other.interest not in self.intrest_list:
-            return False
-
+        
         if self.budget_min > other.budget_max or self.budget_max < other.budget_min:
             return False
-
+        
         if self.loud_music + other.loud_music != 0:
             return False
-
+        
         return True
 
 

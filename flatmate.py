@@ -2,7 +2,7 @@ class Student(object):
 
     n_bed = 3
     n_bath = 2
-    intrest_list = ["ML", "CS", "NLP", "Autonomus Car", "Vision"]
+    intrest_list = ["ML", "CS", "DS", "NLP", "Autonomus Car", "Vision"]
     area = "Morningside heights"
 
     def __init__(self, smoke, major, degree, allow_guest,
